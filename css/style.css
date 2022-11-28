@@ -52,11 +52,8 @@ footer a {
 }
 
 /* Cards  */
-/* .cards {
-    padding-left: 10%;
-    padding-right: 10%;
-} */
-/* 
-.card {
-
-} */
+.container-g {
+    padding-top: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
