@@ -40,6 +40,17 @@ h5 {
     opacity: 75%;
 }
 
+footer {
+    position: relative;
+    color: rgba(255, 255, 255, 0.703);
+    font-weight: 900;
+}
+
+footer a {
+    padding: 20px;
+    color: white;
+}
+
 /* Cards  */
 /* .cards {
     padding-left: 10%;
