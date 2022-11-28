@@ -6,3 +6,46 @@ body {
     margin: auto;
     padding: auto;
 }
+
+/* INDEX STUFF */
+#myVideo {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.text {
+    /* position: absolute; */
+    z-index: 10;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    opacity: 100%;
+    /* margin-top: 10%; */
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.text h2 {
+    font-size: 5em;
+    font-weight: 550;
+    line-height: 1em;
+    text-transform: uppercase;
+    opacity: 75%;
+}
+
+/* Cards  */
+/* .cards {
+    padding-left: 10%;
+    padding-right: 10%;
+} */
+/* 
+.card {
+
+} */

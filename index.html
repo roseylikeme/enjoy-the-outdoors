@@ -11,41 +11,70 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="home">
-    <!-- START OF NAVBAR -->
-    <header>
-        <nav class="navbar navbar-expand-md navbar-scroll">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <h5>Home</h5>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="parks.html">
-                        <h5>National Parks</h5>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="mountains.html">
-                        <h5>Mountains</h5>
-                    </a>
-                    </li>
-                </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <main>
-        <section>
-
-        </section>
+        <div class="bgVideo">
+            <video autoplay loop id="myVideo">
+                <source src="images/outdoors.mp4" type="video/mp4">
+            </video>
+        </div>
+    <!-- START OF NAVBAR -->
+        <header>
+            <nav class="navbar navbar-dark navbar-expand-md navbar-scroll">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                        <a class="nav-link text-white opacity-75" href="index.html">
+                            <h5>Home</h5>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white opacity-75" href="parks.html">
+                            <h5>National Parks</h5>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white opacity-75" href="mountains.html">
+                            <h5>Mountains</h5>
+                        </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="main-holder m4 p-5">
+            <div class="text">
+                <h2>The Rose Project</h2>
+          
+                <h3 class="opacity-75 text-bg-light">Explore the Outdoors</h3>
+                <p class=" opacity-75">
+                    Hi, welcome to the home page. I'm Rose!
+                    I've created The Rose Project to showcase
+                    my SWE / Web Developer journey.</p>
+            </div>
+            <div class="row align-items-md-stretch">
+                <div class="col-md-5">
+                  <div class="h-100 p-5 bg-dark text-bg-dark rounded-3 opacity-75">
+                    <h2>Parks</h2>
+                    <p class="big-p">Come checkout some amazing parks!</p>
+                    <a href="parks.html" class="btn btn-outline-light">Explore More</a>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="h-100 p-5 bg-light border rounded-3 opacity-75">
+                    <h2>Mountains</h2>
+                    <p class="big-p">Climb mountains near you!</p>
+                    <a href="mountains.html" class="btn btn-outline-dark">Explore More</a>
+                  </div>
+                </div>
+              </div>
+        </div>
     </main>
     <!-- More Bootstrap Stuff -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
