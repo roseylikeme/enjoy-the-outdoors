@@ -29,15 +29,11 @@ function addDropdowns() {
 
     let SearchFilter = document.getElementById("SearchFilter").value;
 
-
     if (SearchFilter == "Location") {
         document.getElementById("locationSearch").style.display = "block";
-
         addOptionsOnLocation();
 
-
     } else if (SearchFilter == "Park Type") {
-
         document.getElementById("parkTypeSearch").style.display = "block";
         addOptionsOnPark()
 
@@ -54,7 +50,6 @@ function addDropdowns() {
 function addOptionsOnLocation() {
 
     let locationSearch = document.getElementById("locationSearch");
-
 
     let newOption = document.createElement("option");
     newOption.value = "";
@@ -80,7 +75,6 @@ function addOptionsOnPark() {
     option.value = "";
     option.text = "Please Select a Park Type";
     parkTypeSearch.appendChild(option);
-
 
     for (let park of parkTypesArray) {
         let parkOption = document.createElement("option");
@@ -110,7 +104,6 @@ function locationSearchOnChange() {
     for (let place of nationalParksArray) {
 
         if (locationSearch == place.State) {
-
             let newOption = document.createElement("option");
             newOption.value = place.LocationName;
             newOption.text = place.LocationName;
@@ -122,11 +115,7 @@ function locationSearchOnChange() {
 
             result.style.display = "none"
         }
-
     }
-
-
-
 }
 
 
@@ -146,7 +135,6 @@ function searchByParkOnChange() {
     result.appendChild(option);
 
     for (let park of nationalParksArray) {
-
         if (park.LocationName.indexOf(parkTypeSearch) != -1 && parkTypeSearch != "") {
             let newOption = document.createElement("option");
             newOption.value = park.LocationName;
@@ -165,7 +153,6 @@ function displayResultOnChange() {
     let parksDescription = document.getElementById("parksDescription");
 
     for (let park of nationalParksArray) {
-
         if (result.value == park.LocationName) {
 
             parksDescription.style.display = "block"
@@ -179,9 +166,6 @@ function displayResultOnChange() {
             parksDescription.innerHTML += "<span style='color: Grey;'>Visit : </span> <a href =" + park.Visit + " target = '_blank'>" + park.Visit + "</a>"
 
         }
-
     }
-
-
 }
 
