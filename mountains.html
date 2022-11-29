@@ -11,44 +11,50 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="mountains">
-    <!-- START OF NAVBAR -->
-    <header>
-        <nav class="navbar navbar-expand-md navbar-scroll">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                    <a class="nav-link r" href="index.html">
-                        <h5>Home</h5>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="parks.html">
-                        <h5>National Parks</h5>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link align-content-center" href="mountains.html">
-                        <h5>Mountains</h5>
-                    </a>
-                    </li>
-                </ul>
-                </div>
-            </div>
-            </nav>
-    </header>
     <main>
-        <section>
-            <!-- TODO: INSERT FIELD SELECT HERE -->
+        <div class="bgVideo">
+            <video autoplay loop id="myVideo">
+                <source src="images/mountains.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Nav In Header -->
+        <header>
+            <nav class="navbar navbar-dark navbar-expand-md navbar-scroll">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                        <a class="nav-link r" href="index.html">
+                            <h5>Home</h5>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="parks.html">
+                            <h5>National Parks</h5>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link align-content-center" href="mountains.html">
+                            <h5>Mountains</h5>
+                        </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </nav>
+        </header>
+        <section class="jumboTron">
+
         </section>
     </main>
-    
+    <!-- Scripts -->
+    <script src="scripts/locationData.js"></script>
     <script src="scripts/mountain.js"></script>
     <script src="scripts/mountainData.js"></script>
     <!-- More Bootstrap Stuff -->
