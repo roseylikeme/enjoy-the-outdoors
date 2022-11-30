@@ -21,7 +21,6 @@ window.onload = function () {
 }
 
 function addDropdowns() {
-
     document.getElementById("locationsList").style.display = "none";
     document.getElementById("parkTypeList").style.display = "none";
     document.getElementById("parksDescription").style.display = "none";
@@ -31,11 +30,11 @@ function addDropdowns() {
 
     if (SearchFilter == "Location") {
         document.getElementById("locationsList").style.display = "block";
-        addOptionsOnLocation();
+        searchByLocation();
 
     } else if (SearchFilter == "Park Type") {
         document.getElementById("parkTypeList").style.display = "block";
-        addOptionsOnPark()
+        searchByParkType()
     } else if (SearchFilter == "View All National Parks") {
         viewAllParks();
         parkList.style.display = "block";
@@ -47,8 +46,8 @@ function addDropdowns() {
 
 }
 
-
-function addOptionsOnLocation() {
+// Search By Location Filter
+function searchByLocation() {
     console.log("Adding Search by Location Filter...")
     let locationsList = document.getElementById("locationsList");
 
@@ -66,8 +65,8 @@ function addOptionsOnLocation() {
     }
 }
 
-
-function addOptionsOnPark() {
+// Search By Park Type Filter
+function searchByParkType() {
     console.log("Adding Search by Park Type Filter...")
     let parkTypeList = document.getElementById("parkTypeList");
 
@@ -87,7 +86,7 @@ function addOptionsOnPark() {
 
 }
 
-
+// When Location is Selected
 function locationsListOnChange() {
     console.log("A Location Was Selected...")
     document.getElementById("parksDescription").style.display = "none";
@@ -119,29 +118,7 @@ function locationsListOnChange() {
     }
 }
 
-function viewAllParks() {
-    console.log("Inititalized no filter")
-    let parkList = document.getElementById("parkList")
-    parksDescription.style.display = "none"
-    parkList.length = 0;
-    let parkOption = new Option("Select a park", "select"); // creates a select option for dropdown
-    parkList.appendChild(parkOption); // adds "select a park" option to dropdown
-
-    for (let park of nationalParksArray) {
-        let newOption = document.createElement("option");
-        newOption.value = park.LocationName;
-        newOption.text = park.LocationName;
-        parkList.appendChild(newOption);
-
-        parkList.style.display = "block";
-    } if (parkTypeList.value != "select") { 
-        parkList.style.display = "block"
-    } else {
-        parkList.style.display = "none"
-        parksDescription.style.display = "none"
-    }
-}
-
+// When a Park Type is Selected...
 function searchByParkOnChange() {
     console.log("Park type was selected...")
     // Continue Hiding The Element
@@ -167,6 +144,30 @@ function searchByParkOnChange() {
 
             parkList.style.display = "block";
         }
+    }
+}
+
+// View All Parks Option [No Filter]
+function viewAllParks() {
+    console.log("Inititalized no filter")
+    let parkList = document.getElementById("parkList")
+    parksDescription.style.display = "none"
+    parkList.length = 0;
+    let parkOption = new Option("Select a park", "select"); // creates a select option for dropdown
+    parkList.appendChild(parkOption); // adds "select a park" option to dropdown
+
+    for (let park of nationalParksArray) {
+        let newOption = document.createElement("option");
+        newOption.value = park.LocationName;
+        newOption.text = park.LocationName;
+        parkList.appendChild(newOption);
+
+        parkList.style.display = "block";
+    } if (parkTypeList.value != "select") { 
+        parkList.style.display = "block"
+    } else {
+        parkList.style.display = "none"
+        parksDescription.style.display = "none"
     }
 }
 

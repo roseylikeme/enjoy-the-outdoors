@@ -23,6 +23,7 @@ function initMountainsList() {
     }
 }
 
+// Grabs the Sunrise & Sunset Time of Each Mountain
 async function getSunsetForMountain(lat, lng){
     let response = await fetch(
     `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
@@ -30,6 +31,7 @@ async function getSunsetForMountain(lat, lng){
     return data;
 }
 
+// Displays Mountain Info In Card
 function displayInfo() {
     mtnInfo.innerHTML = "";
     for (let mountain of mountainsArray) {
