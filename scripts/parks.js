@@ -180,12 +180,12 @@ function displayResultOnChange() {
     for (let park of nationalParksArray) {
         if (parkList.value == park.LocationName) {
             parksDescription.style.display = "block"
-            parksDescription.innerHTML = "<span style='color: Grey ; '>Name : </span>" + park.LocationName + "<br/>" + "<span style='color: grey;'>Address : </span>" + park.Address + "<br/>" + "<span style='color: grey;'>City : </span>" + park.City + "<br/>" + "<span style='color: grey;'>State : </span>" + park.State + "<br/>" + "<span style='color: grey;'>Zip Code : </span>" + park.ZipCode + "<br/>" + "<span style='color: grey;'>Latitude : </span>" + park.Latitude + "<br/>" + "<span style='color: grey;'>Longitude : </span>" + park.Longitude + "<br/>";
+            parksDescription.innerHTML = "<span style='color: Green; font-weight: bold'>Name : </span>" + park.LocationName + "<br/>" + "<span style='color: Green; font-weight: bold'>Address : </span>" + park.Address + "<br/>" + "<span style='color: Green; font-weight: bold'>City : </span>" + park.City + "<br/>" + "<span style='color: Green; font-weight: bold'>State : </span>" + park.State + "<br/>" + "<span style='color: Green; font-weight: bold'>Zip Code : </span>" + park.ZipCode + "<br/>" + "<span style='color: Green; font-weight: bold'>Latitude : </span>" + park.Latitude + "<br/>" + "<span style='color: Green; font-weight: bold'>Longitude : </span>" + park.Longitude + "<br/>";
 
         }
         // Visit property that contains a URL to a page about the park
         if (park.Visit != undefined && parkList.value == park.LocationName) {
-            parksDescription.innerHTML += "<span style='color: Grey;'>Visit : </span> <a href =" + park.Visit + " target = '_blank'>" + park.Visit + "</a>"
+            parksDescription.innerHTML += "<span style='color: Green; font-weight: bold'>Visit : </span> <a href =" + park.Visit + " target = '_blank'>" + park.Visit + "</a>"
         }
     }
 }

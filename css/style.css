@@ -23,8 +23,6 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 5%;
-    opacity: 100%;
-    /* margin-top: 10%; */
 }
 
 h5 {
@@ -37,12 +35,11 @@ h5 {
     font-weight: 550;
     line-height: 1em;
     text-transform: uppercase;
-    opacity: 75%;
+    opacity: 99%;
 }
 
 footer {
     position: relative;
-    color: rgba(255, 255, 255, 0.703);
     font-weight: 900;
 }
 
