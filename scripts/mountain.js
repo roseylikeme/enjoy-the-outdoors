@@ -41,9 +41,9 @@ function displayInfo() {
         }
         else if (mountain.name == mtnList.value) {
             mtnInfoCardTitle.innerText = mountain.name;
-            mtnInfo.innerHTML += "<span class='fw-bold'>Elevation: </span>" + mountain.elevation + "<br><span class='fw-bold'>Coordinates: </span>" + mountain.coords.lat + ", " + mountain.coords.lng;
+            mtnInfo.innerHTML += "<span class='fw-bold'>Elevation: </span>" + mountain.elevation + "<br><span class='fw-bold'>Coordinates: </span>" + mountain.coords.lat + ", " + mountain.coords.lng + "<br><span class='fw-bold'>Description: </span>" + mountain.desc;
             getSunsetForMountain(mountain.coords.lat, mountain.coords.lng).then(data => {
-                mtnInfo.innerHTML += "<br><span class='fw-bold'>Sunrise Time: </span>" + data.results.sunrise +  "<br><span class='fw-bold'>Sunset Time: </span>" + data.results.sunset + "<br><span class='fw-bold'>Description: </span>" + mountain.desc;
+                mtnInfo.innerHTML += "<br><span class='fw-bold'>Sunrise Time: </span>" + data.results.sunrise +  "<br><span class='fw-bold'>Sunset Time: </span>" + data.results.sunset;
             });
             mtnInfoCardImg.src = "images/" + mountain.img;
             mtnInfoCard.style.display = "block";
