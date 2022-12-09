@@ -6,11 +6,13 @@ let locationsList = document.getElementById("locationsList");
 let parkTypeList = document.getElementById("parkTypeList");
 let parkList = document.getElementById("parkList");
 let parksDescription = document.getElementById("parksDescription");
+let extraData = document.getElementById("extraData");
 // Hide elements
 locationsList.style.display = "none";
 parkTypeList.style.display = "none";
 parkList.style.display = "none";
 parksDescription.style.display = "none";
+extraData.style.display = "none";
 
 window.onload = function () {
     SearchFilter.onchange = addDropdowns;
@@ -24,6 +26,7 @@ function addDropdowns() {
     parkTypeList.style.display = "none";
     parksDescription.style.display = "none";
     parkList.style.display = "none";
+    extraData.style.display = "none";
 
     if (SearchFilter.value == "Location") {
         document.getElementById("locationsList").style.display = "block";
@@ -44,6 +47,7 @@ function searchByParkType() {
 
     parksDescription.style.display = "none";
     parkList.style.display = "none"
+    extraData.style.display = "none";
 
     let parkTypeOption = new Option("Please Select a Park Type ...", "");
     parkTypeList.appendChild(parkTypeOption);
@@ -62,6 +66,7 @@ function searchByParkOnChange() {
     // Continue Hiding The Element
     parkList.style.display = "none";
     parksDescription.style.display = "none";
+    extraData.style.display = "none";
 
     let parkTypeOption = new Option("Please Select a Park ...", "");
     parkList.appendChild(parkTypeOption);
@@ -75,6 +80,8 @@ function searchByParkOnChange() {
     }
 }
 
+let currentState;
+
 // Search By Location Filter
 function searchByLocation() {
     console.log("Adding Search by Location Filter...")
@@ -82,6 +89,7 @@ function searchByLocation() {
 
     parksDescription.style.display = "none";
     parkList.style.display = "none"
+    extraData.style.display = "none";
 
     let locationOption = new Option("Select a Location ...", "");
     locationsList.appendChild(locationOption);
@@ -91,14 +99,14 @@ function searchByLocation() {
         locationsList.appendChild(option);
     }
 }
-
 // When Location is Selected
 function locationsListOnChange() {
     console.log("A Location Was Selected...")
     parkList.length = 0;
-
+    // Hide some stuff
     parksDescription.style.display = "none";
     parkList.style.display = "none"
+    extraData.style.display = "none";
 
     let parkOption = new Option("Please Select a Park Type ...", "");
     parkList.appendChild(parkOption);
@@ -110,12 +118,22 @@ function locationsListOnChange() {
             parkList.style.display = "block";
         }
     }
+    if (parkList.length < 2){
+        noParkFound();
+    }
 }
 
+// Runs if no parks found
+function noParkFound(){
+    extraData.style.display = "block";
+    console.log("Could not find any parks in this state")
+    extraData.innerHTML = "Could not find any parks in " + locationsList.value + ".";
+}
 // View All Parks Option [No Filter]
 function viewAllParks() {
     console.log("Inititalized no filter")
     parksDescription.style.display = "none"
+    extraData.style.display = "none";
     parkList.length = 0;
 
     let parkOption = new Option("Please Select a Park ...", ""); // creates a select option for dropdown
