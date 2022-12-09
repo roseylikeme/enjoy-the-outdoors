@@ -18,7 +18,7 @@ window.onload = function () {
     parkTypeList.onchange = searchByParkOnChange;
     parkList.onchange = displayResultOnChange;
 }
-
+// Populate initial dropdown list
 function addDropdowns() {
     locationsList.style.display = "none";
     parkTypeList.style.display = "none";
@@ -34,23 +34,6 @@ function addDropdowns() {
     } else if (SearchFilter.value == "View All National Parks") {
         viewAllParks();
         parkList.style.display = "block";
-    }
-}
-
-// Search By Location Filter
-function searchByLocation() {
-    console.log("Adding Search by Location Filter...")
-    locationsList.length = 0; // resets location list back to "please select a state"
-
-    parksDescription.style.display = "none";
-    parkList.style.display = "none"
-
-    let locationOption = new Option("Select a Location ...", "");
-    locationsList.appendChild(locationOption);
-
-    for (let location of locationsArray){
-        let option = new Option(location, location);
-        locationsList.appendChild(option);
     }
 }
 
@@ -71,26 +54,6 @@ function searchByParkType() {
     }
 }
 
-// When Location is Selected
-function locationsListOnChange() {
-    console.log("A Location Was Selected...")
-    parkList.length = 0;
-
-    parksDescription.style.display = "none";
-    parkList.style.display = "none"
-
-    let parkOption = new Option("Please Select a Park Type ...", "");
-    parkList.appendChild(parkOption);
-
-    for (let location of nationalParksArray) {
-        if (locationsList.value == location.State && locationsList.value != "") {
-            let locationOption = new Option(location.LocationName, location.LocationName);
-            parkList.appendChild(locationOption);
-            parkList.style.display = "block";
-        }
-    }
-}
-
 // When a Park Type is Selected...
 function searchByParkOnChange() {
     console.log("Park type was selected...")
@@ -107,6 +70,43 @@ function searchByParkOnChange() {
         if (park.LocationName.indexOf(parkTypeList.value) != -1 && parkTypeList.value != "") {
             let parkTypeOption = new Option(park.LocationName, park.LocationName);
             parkList.appendChild(parkTypeOption);
+            parkList.style.display = "block";
+        }
+    }
+}
+
+// Search By Location Filter
+function searchByLocation() {
+    console.log("Adding Search by Location Filter...")
+    locationsList.length = 0; // resets location list back to "please select a state"
+
+    parksDescription.style.display = "none";
+    parkList.style.display = "none"
+
+    let locationOption = new Option("Select a Location ...", "");
+    locationsList.appendChild(locationOption);
+
+    for (let location of locationsArray){
+        let option = new Option(location, location);
+        locationsList.appendChild(option);
+    }
+}
+
+// When Location is Selected
+function locationsListOnChange() {
+    console.log("A Location Was Selected...")
+    parkList.length = 0;
+
+    parksDescription.style.display = "none";
+    parkList.style.display = "none"
+
+    let parkOption = new Option("Please Select a Park Type ...", "");
+    parkList.appendChild(parkOption);
+
+    for (let location of nationalParksArray) {
+        if (locationsList.value == location.State && locationsList.value != "") {
+            let locationOption = new Option(location.LocationName, location.LocationName);
+            parkList.appendChild(locationOption);
             parkList.style.display = "block";
         }
     }
